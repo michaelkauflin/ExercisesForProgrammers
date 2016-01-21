@@ -1,4 +1,5 @@
 ﻿
+using System.Globalization;
 using TipCalculator;
 
 namespace TipCaclulator.Console
@@ -15,8 +16,8 @@ namespace TipCaclulator.Console
 
             var engine = new Engine(bill, percentage);
 
-            System.Console.WriteLine("The tip is $" + engine.Tip);
-            System.Console.WriteLine("The total is $" + engine.Total);
+            System.Console.WriteLine(string.Format(CultureInfo.InvariantCulture, "The tip is ${0:0.00}", engine.Tip));
+            System.Console.WriteLine(string.Format(CultureInfo.InvariantCulture, "The total is ${0:0.00}", engine.Total));
 
             System.Console.ReadLine();
         }
